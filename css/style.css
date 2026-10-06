@@ -361,3 +361,8 @@ border-bottom:1px solid var(--line)}
         font-size: 85px;
     }
 }
+
+/* Nom du Maître : même couleur que MAÎTRE */
+.master-section h2 span strong {
+    color: #ffffff;
+}
