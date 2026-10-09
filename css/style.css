@@ -567,3 +567,61 @@ border-bottom:1px solid var(--line)}
         font-size: 13px;
     }
 }
+
+```css
+/* ==========================================
+   RÉSEAUX SOCIAUX — SECTION CONTACT
+========================================== */
+
+.contact-socials {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.contact-social {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+    font-size: 19px;
+    text-decoration: none;
+    transition:
+        background .25s ease,
+        color .25s ease,
+        border-color .25s ease,
+        transform .25s ease;
+}
+
+.contact-social:hover {
+    background: #d60000;
+    color: #fff;
+    border-color: #d60000;
+    transform: translateY(-4px);
+}
+
+.contact-social:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 4px;
+}
+
+/* Adaptation aux téléphones */
+@media (max-width: 600px) {
+    .contact-socials {
+        gap: 10px;
+        margin-top: 22px;
+    }
+
+    .contact-social {
+        width: 42px;
+        height: 42px;
+        font-size: 17px;
+    }
+}
