@@ -366,3 +366,204 @@ border-bottom:1px solid var(--line)}
 .master-section h2 span strong {
     color: #ffffff;
 }
+
+
+/* ==========================================
+   GALERIE FBI INTERNATIONAL PRO-X
+   ========================================== */
+
+.gallery {
+    background: #fff;
+    color: #111;
+}
+
+.gallery .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 35px;
+    margin-bottom: 35px;
+}
+
+.gallery .section-head > p {
+    max-width: 450px;
+    color: #666;
+    font-size: 14px;
+}
+
+.gallery .section-tag {
+    color: #d60000;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.gallery .section-head h2 {
+    font-size: clamp(32px, 4vw, 52px);
+    line-height: 1.1;
+    font-weight: 900;
+}
+
+.gallery .section-head h2 span {
+    color: #d60000;
+}
+
+/* Grille des cinq catégories */
+
+.gallery-placeholder {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px 20px;
+}
+
+.gallery-card {
+    min-width: 0;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.10);
+}
+
+/* Photo */
+
+.gallery-photo {
+    position: relative;
+    display: block;
+    height: 250px;
+    overflow: hidden;
+    background: #171717;
+    color: #fff;
+}
+
+.gallery-photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.88),
+        rgba(0, 0, 0, 0.05) 70%
+    );
+    pointer-events: none;
+}
+
+.gallery-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-card:hover .gallery-photo img {
+    transform: scale(1.07);
+}
+
+/* Numéro de la catégorie */
+
+.gallery-number {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 2;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* Titre sur la photo */
+
+.gallery-title {
+    position: absolute;
+    left: 18px;
+    bottom: 18px;
+    z-index: 2;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+/* Lien Voir plus sous chaque photo */
+
+.gallery-more {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 18px;
+    color: #111;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.gallery-more span {
+    color: #d60000;
+    font-size: 20px;
+    transition: transform 0.25s ease;
+}
+
+.gallery-more:hover {
+    color: #d60000;
+}
+
+.gallery-more:hover span {
+    transform: translate(3px, -3px);
+}
+
+/* Tablettes */
+
+@media (max-width: 900px) {
+    .gallery-placeholder {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .gallery .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .gallery-photo {
+        height: 230px;
+    }
+}
+
+/* Téléphones */
+
+@media (max-width: 600px) {
+    .gallery-placeholder {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .gallery-photo {
+        height: 240px;
+    }
+
+    .gallery-title {
+        font-size: 16px;
+    }
+
+    .gallery-more {
+        padding: 15px;
+    }
+
+    .gallery .section-head h2 {
+        font-size: 34px;
+    }
+
+    .gallery .section-head > p {
+        font-size: 13px;
+    }
+}
