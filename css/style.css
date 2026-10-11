@@ -568,7 +568,6 @@ border-bottom:1px solid var(--line)}
     }
 }
 
-```css
 /* ==========================================
    RÉSEAUX SOCIAUX — SECTION CONTACT
 ========================================== */
@@ -624,4 +623,366 @@ border-bottom:1px solid var(--line)}
         height: 42px;
         font-size: 17px;
     }
+}
+
+/* ==========================================
+   MODALE — PRÉSENTATION DU MAÎTRE
+   FBI INTERNATIONAL PRO-X
+========================================== */
+
+.master-modal[hidden] {
+    display: none !important;
+}
+
+.master-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+}
+
+.master-modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .86);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.master-modal-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 850px;
+    max-height: 88vh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background: #111;
+    color: #f5f5f5;
+    border: 1px solid rgba(214, 0, 0, .65);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, .55);
+    animation: masterModalAppear .3s ease;
+}
+
+.master-modal-content:focus {
+    outline: none;
+}
+
+.master-modal-close {
+    position: sticky;
+    top: 12px;
+    float: right;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    margin: 12px 12px -54px 0;
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 50%;
+    background: #d60000;
+    color: #fff;
+    font-size: 29px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background .2s ease, transform .2s ease;
+}
+
+.master-modal-close:hover {
+    background: #a90000;
+    transform: rotate(90deg);
+}
+
+.master-modal-header {
+    padding: 45px 42px 30px;
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(214, 0, 0, .18),
+            transparent 55%
+        ),
+        #151515;
+    border-bottom: 2px solid #d60000;
+}
+
+.master-modal-tag {
+    margin-bottom: 18px;
+    color: #ed1c24;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+}
+
+.master-modal-header h2 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(25px, 4vw, 38px);
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+.master-modal-header h2 span {
+    color: #ed1c24;
+}
+
+.master-modal-name {
+    margin: 10px 0;
+    color: #fff;
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.master-modal-header > p:last-child {
+    margin-bottom: 0;
+    color: #bbb;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.master-modal-body {
+    padding: 12px 42px 30px;
+}
+
+.master-modal-section {
+    padding: 23px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .12);
+}
+
+.master-modal-section h3 {
+    margin: 0 0 12px;
+    color: #ed1c24;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 1.5;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+.master-modal-section p {
+    margin: 0;
+    color: #d0d0d0;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.master-modal-motto {
+    margin-top: 25px;
+    padding: 20px 15px;
+    background: rgba(214, 0, 0, .10);
+    border-left: 4px solid #d60000;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.master-modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 22px 42px;
+    background: #191919;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+}
+
+.master-modal-footer > span {
+    color: #aaa;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    line-height: 1.7;
+}
+
+.master-modal-footer .btn {
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+@keyframes masterModalAppear {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Tablettes et téléphones */
+@media (max-width: 600px) {
+    .master-modal {
+        padding: 10px;
+    }
+
+    .master-modal-content {
+        max-height: 92vh;
+    }
+
+    .master-modal-header {
+        padding: 42px 22px 24px;
+    }
+
+    .master-modal-body {
+        padding: 8px 22px 24px;
+    }
+
+    .master-modal-section {
+        padding: 19px 0;
+    }
+
+    .master-modal-section h3 {
+        font-size: 14px;
+    }
+
+    .master-modal-section p {
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    .master-modal-name {
+        font-size: 17px;
+    }
+
+    .master-modal-footer {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 20px 22px;
+    }
+
+    .master-modal-footer .btn {
+        align-self: flex-start;
+    }
+}
+
+/* Respect de la préférence de réduction des animations */
+@media (prefers-reduced-motion: reduce) {
+    .master-modal-content {
+        animation: none;
+    }
+
+    .master-modal-close {
+        transition: none;
+    }
+}
+
+/* ==========================================
+   PRÉSENTATION DU MAÎTRE
+   THÈME CLAIR — FBI INTERNATIONAL PRO-X
+========================================== */
+
+/* Fond extérieur */
+.master-modal-overlay {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+/* Boîte principale */
+.master-modal-content {
+    background: #ffffff;
+    color: #222222;
+    border: 2px solid #d60000;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+}
+
+/* En-tête blanc avec accent rouge */
+.master-modal-header {
+    background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #fff5f5 100%
+    );
+    border-bottom: 3px solid #d60000;
+}
+
+/* Petit titre supérieur */
+.master-modal-tag {
+    color: #d60000;
+}
+
+/* Nom et titre du Maître */
+.master-modal-header h2 {
+    color: #202020;
+}
+
+.master-modal-header h2 span {
+    color: #d60000;
+}
+
+.master-modal-name {
+    color: #222222;
+}
+
+.master-modal-header > p:last-child {
+    color: #555555;
+}
+
+/* Bouton de fermeture */
+.master-modal-close {
+    background: #d60000;
+    color: #ffffff;
+    border: 2px solid #d60000;
+    box-shadow: 0 3px 10px rgba(214, 0, 0, 0.18);
+}
+
+.master-modal-close:hover {
+    background: #a90000;
+    border-color: #a90000;
+}
+
+/* Rubriques */
+.master-modal-section {
+    border-bottom: 1px solid #eeeeee;
+}
+
+.master-modal-section h3 {
+    color: #d60000;
+}
+
+.master-modal-section p {
+    color: #444444;
+}
+
+/* Devise du club */
+.master-modal-motto {
+    background: #fff2f2;
+    border-left: 5px solid #d60000;
+    color: #222222;
+    border-radius: 0 6px 6px 0;
+}
+
+/* Pied de la boîte */
+.master-modal-footer {
+    background: #f7f7f7;
+    border-top: 1px solid #e5e5e5;
+}
+
+.master-modal-footer > span {
+    color: #555555;
+}
+
+/* Bouton FERMER */
+.master-modal-footer .btn-red {
+    background: #d60000;
+    color: #ffffff;
+    border: 1px solid #d60000;
+}
+
+.master-modal-footer .btn-red:hover {
+    background: #a90000;
+    border-color: #a90000;
+}
+
+body.master-modal-open {
+    overflow: hidden;
 }
