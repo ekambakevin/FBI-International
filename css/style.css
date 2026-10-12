@@ -986,3 +986,296 @@ border-bottom:1px solid var(--line)}
 body.master-modal-open {
     overflow: hidden;
 }
+
+```css
+/* ==========================================
+   CONTACT : COORDONNÉES ET FORMULAIRE
+   FBI INTERNATIONAL PRO-X
+========================================== */
+
+.contact-info {
+    min-width: 0;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 28px;
+}
+
+.contact-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.contact-detail strong {
+    color: #ed1c24;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1.8px;
+}
+
+.contact-detail span,
+.contact-detail a {
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.contact-detail a {
+    text-decoration: none;
+}
+
+.contact-detail a:hover {
+    color: #ed1c24;
+}
+
+/* Carte du formulaire */
+.contact-form-box {
+    display: block;
+    align-self: start;
+    min-width: 0;
+    padding: 32px;
+    background: #fff;
+    color: #222;
+    border: 1px solid #e5e5e5;
+    border-top: 4px solid #d60000;
+    border-radius: 6px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.10);
+}
+
+.contact-form-heading {
+    margin-bottom: 25px;
+}
+
+.contact-form-heading .section-tag {
+    margin-bottom: 10px;
+    color: #d60000;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.contact-form-heading h3 {
+    margin: 0 0 12px;
+    color: #171717;
+    font-size: clamp(22px, 2.5vw, 30px);
+    font-weight: 900;
+    line-height: 1.25;
+}
+
+.contact-form-heading p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* Champs */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.contact-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.contact-form label {
+    color: #222;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 13px 14px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    background: #fafafa;
+    color: #222;
+    font: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.contact-form input {
+    min-height: 46px;
+}
+
+.contact-form textarea {
+    min-height: 145px;
+    resize: vertical;
+    line-height: 1.7;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #d60000;
+    box-shadow: 0 0 0 3px rgba(214, 0, 0, 0.10);
+    background: #fff;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #999;
+}
+
+.contact-submit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    width: 100%;
+    padding: 16px 20px;
+    border: 1px solid #d60000;
+    cursor: pointer;
+    font: inherit;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.contact-submit span {
+    font-size: 21px;
+    transition: transform .2s ease;
+}
+
+.contact-submit:hover span {
+    transform: translateX(4px);
+}
+
+.contact-form-note {
+    margin: 0;
+    color: #777;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+/* Adaptation mobile */
+@media (max-width: 700px) {
+    .contact-form-box {
+        padding: 23px 18px;
+    }
+
+    .contact-details {
+        margin-top: 22px;
+    }
+
+    .contact-detail {
+        padding: 14px 0;
+    }
+
+    .contact-form {
+        gap: 16px;
+    }
+}
+
+/* ==========================================
+   FORMULAIRE CONTACT — VERSION COMPACTE
+========================================== */
+
+/* Réduire la taille générale de la carte */
+.contact-form-box {
+    width: 100%;
+    max-width: 460px;
+    justify-self: end;
+    box-sizing: border-box;
+    padding: 22px;
+    border-top-width: 3px;
+}
+
+/* Réduire l'espace de l'en-tête */
+.contact-form-heading {
+    margin-bottom: 18px;
+}
+
+.contact-form-heading h3 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.contact-form-heading p {
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* Réduire les espaces entre les champs */
+.contact-form {
+    gap: 12px;
+}
+
+.contact-form .form-group {
+    gap: 5px;
+}
+
+.contact-form label {
+    font-size: 11px;
+}
+
+/* Champs plus petits */
+.contact-form input {
+    min-height: 38px;
+    padding: 9px 11px;
+    font-size: 12px;
+}
+
+.contact-form textarea {
+    min-height: 95px;
+    padding: 10px 11px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* Bouton d'envoi plus compact */
+.contact-submit {
+    padding: 12px 15px;
+    font-size: 11px;
+}
+
+.contact-submit span {
+    font-size: 18px;
+}
+
+/* Note en bas du formulaire */
+.contact-form-note {
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+/* Téléphones */
+@media (max-width: 700px) {
+    .contact-form-box {
+        max-width: 100%;
+        padding: 18px 15px;
+        margin-top: 10px;
+    }
+
+    .contact-form-heading h3 {
+        font-size: 20px;
+    }
+
+    .contact-form input {
+        min-height: 40px;
+    }
+
+    .contact-form textarea {
+        min-height: 90px;
+    }
+}
