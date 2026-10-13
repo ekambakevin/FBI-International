@@ -1279,3 +1279,62 @@ body.master-modal-open {
         min-height: 90px;
     }
 }
+
+
+/* ==========================================
+   FORMULAIRE CONTACT — FOND TRANSPARENT
+========================================== */
+
+.contact-form-box {
+    background: transparent;
+    border: none;
+    border-top: none;
+    box-shadow: none;
+    border-radius: 0;
+    color: #fff;
+}
+
+/* Titre unique */
+.contact-form-heading {
+    margin-bottom: 20px;
+}
+
+.contact-form-heading h3 {
+    margin: 0;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+/* Champs légèrement transparents */
+.contact-form input,
+.contact-form textarea {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #fff;
+}
+
+/* Texte indicatif */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+/* Libellés des champs */
+.contact-form label {
+    color: #fff;
+}
+
+/* Focus sur les champs */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    background: rgba(255, 255, 255, 0.13);
+    border-color: white;
+    box-shadow: 0 0 0 3px rgba(237, 28, 36, 0.15);
+}
+
+/* Note en bas du formulaire */
+.contact-form-note {
+    color: rgba(255, 255, 255, 0.7);
+}
