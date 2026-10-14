@@ -149,3 +149,108 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+/* ==========================================
+   OUVERTURE ET FERMETURE DU FORMULAIRE
+========================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("registrationModal");
+    const openButton = document.getElementById("openRegistrationModal");
+
+    if (!modal || !openButton) return;
+
+    const dialog = modal.querySelector(".registration-modal-dialog");
+    const closeButton = document.getElementById("closeRegistrationModal");
+    const closeElements = modal.querySelectorAll("[data-close-registration]");
+    const form = document.getElementById("clubRegistrationForm");
+
+    let previousFocus = null;
+
+    function openModal() {
+        previousFocus = document.activeElement;
+        modal.hidden = false;
+        document.body.classList.add("registration-modal-open");
+
+        if (closeButton) {
+            closeButton.focus();
+        } else {
+            dialog.focus();
+        }
+    }
+
+    function closeModal() {
+        if (modal.hidden) return;
+
+        modal.hidden = true;
+        document.body.classList.remove("registration-modal-open");
+
+        if (previousFocus && typeof previousFocus.focus === "function") {
+            previousFocus.focus();
+        } else {
+            openButton.focus();
+        }
+    }
+
+    openButton.addEventListener("click", openModal);
+
+    if (closeButton) {
+        closeButton.addEventListener("click", closeModal);
+    }
+
+    closeElements.forEach(function (element) {
+        element.addEventListener("click", closeModal);
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (modal.hidden) return;
+
+        if (event.key === "Escape") {
+            closeModal();
+            return;
+        }
+
+        if (event.key === "Tab") {
+            const elements = Array.from(
+                modal.querySelectorAll(
+                    'a[href], button:not([disabled]), ' +
+                    'input:not([disabled]), select:not([disabled]), ' +
+                    '[tabindex="0"]'
+                )
+            ).filter(function (element) {
+                return element.getClientRects().length > 0;
+            });
+
+            if (elements.length === 0) {
+                event.preventDefault();
+                dialog.focus();
+                return;
+            }
+
+            const first = elements[0];
+            const last = elements[elements.length - 1];
+
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last.focus();
+            } else if (!event.shiftKey &&
+                       document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
+            }
+        }
+    });
+
+    /*
+     * Le traitement réel de l'inscription est effectué
+     * par inscription.php, et non par JavaScript.
+     */
+    if (form) {
+        form.addEventListener("submit", function (event) {
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                form.reportValidity();
+            }
+        });
+    }
+});
