@@ -18,7 +18,13 @@
 <a href="#accueil" class="brand"><img src="images/logo.jpeg" alt="FBI International Pro-X MMA Gym"></a>
 <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 <nav class="menu" id="mainMenu"><a href="#accueil" class="active">Accueil</a><a href="#club">Le club</a><a href="#disciplines">Disciplines</a><a href="#programmes">Programmes</a><a href="#maitre">Maître</a><a href="#galerie">Galerie</a><a href="#contact">Contact</a></nav>
-<a href="#contact" class="nav-cta">S'inscrire ↗</a>
+<button type="button"
+        class="nav-cta"
+        id="openRegistrationModal"
+        aria-haspopup="dialog"
+        aria-controls="registrationModal">
+    S'inscrire ↗
+</button>
 </div></header>
 <main>
 <section class="hero"><div class="hero-grid"></div><div class="hero-glow"></div><div class="container hero-inner">
@@ -220,4 +226,401 @@
 </main>
 <footer class="footer"><div class="container footer-content"><div class="footer-brand"><img src="images/logo.jpeg" alt="Logo"><div><strong>FBI INTERNATIONAL PRO-X</strong><p>MMA GYM • ARTS MARTIAUX • CONDITION PHYSIQUE</p></div></div><div class="footer-slogan">DISCIPLINE • FORCE • MAÎTRISE • HONNEUR</div></div><div class="copyright">© 2026 FBI International Pro-X — Tous droits réservés.</div></footer>
 <script src="js/script.js"></script>
+<!-- ======================================
+     MODALE D'INSCRIPTION AU CLUB
+====================================== -->
+<div class="registration-modal"
+     id="registrationModal"
+     hidden>
+
+    <div class="registration-modal-overlay"
+         data-close-registration></div>
+
+    <div class="registration-modal-dialog"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="registrationModalTitle"
+         tabindex="-1">
+
+        <div class="registration-modal-header">
+            <div>
+                <span class="registration-modal-tag">
+                    FBI INTERNATIONAL PRO-X
+                </span>
+
+                <h2 id="registrationModalTitle">
+                    INSCRIVEZ-VOUS AU
+                    <span>FBI INTERNATIONAL PRO-X MMA GYM</span>
+                </h2>
+
+                <p>
+                    Remplissez soigneusement le formulaire d'inscription.
+                    Les champs marqués d'un
+                    <span class="required">*</span>
+                    sont obligatoires.
+                </p>
+            </div>
+
+            <button type="button"
+                    class="registration-modal-close"
+                    id="closeRegistrationModal"
+                    aria-label="Fermer le formulaire">
+                &times;
+            </button>
+        </div>
+
+        <form id="clubRegistrationForm"
+              action="inscription.php"
+              method="POST"
+              enctype="multipart/form-data">
+
+            <!-- PHOTO -->
+            <fieldset>
+                <legend>Photo du candidat</legend>
+
+                <div class="registration-field">
+                    <label for="ins_photo">
+                        Photo récente <span class="required">*</span>
+                    </label>
+
+                    <input type="file"
+                           id="ins_photo"
+                           name="photo"
+                           accept=".jpg,.jpeg,.png,.webp"
+                           required>
+
+                    <small>Formats autorisés : JPG, PNG ou WEBP.</small>
+                </div>
+            </fieldset>
+
+            <!-- IDENTITÉ -->
+            <fieldset>
+                <legend>01 — Identité du candidat</legend>
+
+                <div class="registration-grid">
+
+                    <div class="registration-field">
+                        <label for="ins_nom">Nom <span class="required">*</span></label>
+                        <input id="ins_nom" name="nom" type="text" autocomplete="family-name" required>
+                    </div>
+
+                    <div class="registration-field">
+                        <label for="ins_postnom">Post-nom <span class="required">*</span></label>
+                        <input id="ins_postnom" name="postnom" type="text" required>
+                    </div>
+
+                    <div class="registration-field">
+                        <label for="ins_prenom">Prénom <span class="required">*</span></label>
+                        <input id="ins_prenom" name="prenom" type="text" autocomplete="given-name" required>
+                    </div>
+
+                    <div class="registration-field">
+                        <label for="ins_sexe">Sexe <span class="required">*</span></label>
+                        <select id="ins_sexe" name="sexe" required>
+                            <option value="">Sélectionner</option>
+                            <option value="M">M</option>
+                            <option value="F">F</option>
+                        </select>
+                    </div>
+
+                    <div class="registration-field">
+                        <label for="ins_lieu">Lieu de naissance <span class="required">*</span></label>
+                        <input id="ins_lieu" name="lieu_naissance" type="text" required>
+                    </div>
+
+                    <div class="registration-field">
+                        <label for="ins_date">Date de naissance <span class="required">*</span></label>
+                        <input id="ins_date" name="date_naissance" type="date" required>
+                    </div>
+
+                    <div class="registration-field">
+                        <label for="ins_rue">Rue <span class="required">*</span></label>
+                        <input id="ins_rue" name="rue" type="text" required>
+                    </div>
+
+                    <div class="registration-field">
+                        <label for="ins_quartier">Quartier <span class="required">*</span></label>
+                        <input id="ins_quartier" name="quartier" type="text" required>
+                    </div>
+
+                    <div class="registration-field">
+                        <label for="ins_commune">Commune <span class="required">*</span></label>
+                        <select id="ins_commune" name="commune" required>
+                            <option value="">Sélectionner</option>
+                            <option>Bandalungwa</option>
+                            <option>Barumbu</option>
+                            <option>Bumbu</option>
+                            <option>Gombe</option>
+                            <option>Kalamu</option>
+                            <option>Kasa-Vubu</option>
+                            <option>Kimbanseke</option>
+                            <option>Kinshasa</option>
+                            <option>Kintambo</option>
+                            <option>Kisenso</option>
+                            <option>Lemba</option>
+                            <option>Limete</option>
+                            <option>Lingwala</option>
+                            <option>Makala</option>
+                            <option>Maluku</option>
+                            <option>Masina</option>
+                            <option>Matete</option>
+                            <option>Mont-Ngafula</option>
+                            <option>Ngaba</option>
+                            <option>Ngaliema</option>
+                            <option>Ngiri-Ngiri</option>
+                            <option>Ndjili</option>
+                            <option>Nsele</option>
+                            <option>Selembao</option>
+                        </select>
+                    </div>
+
+                    <div class="registration-field">
+                        <label for="ins_district">District <span class="required">*</span></label>
+                        <select id="ins_district" name="district" required>
+                            <option value="">Sélectionner</option>
+                            <option>Tshangu</option>
+                            <option>Mont-Amba</option>
+                            <option>Funa</option>
+                            <option>Lukunga</option>
+                        </select>
+                    </div>
+
+                    <div class="registration-field">
+                        <label for="ins_email">Adresse e-mail <span class="required">*</span></label>
+                        <input id="ins_email" name="email" type="email" autocomplete="email" required>
+                    </div>
+
+                    <div class="registration-field">
+                        <label for="ins_telephone">Téléphone <span class="required">*</span></label>
+                        <input id="ins_telephone" name="telephone" type="tel" autocomplete="tel" required>
+                    </div>
+
+                    <div class="registration-field registration-full">
+                        <label for="ins_urgence">
+                            Personne à contacter en cas d'urgence
+                            <span class="required">*</span>
+                        </label>
+                        <input id="ins_urgence"
+                               name="contact_urgence"
+                               type="text"
+                               placeholder="Nom complet et numéro de téléphone"
+                               required>
+                    </div>
+
+                </div>
+            </fieldset>
+
+            <!-- RESPONSABLE PRINCIPAL -->
+            <fieldset>
+                <legend>02 — Responsable 1 : principal</legend>
+
+                <div class="registration-grid">
+
+                    <div class="registration-field">
+                        <label for="r1_nom">Nom <span class="required">*</span></label>
+                        <input id="r1_nom" name="r1_nom" type="text" required>
+                    </div>
+
+                    <div class="registration-field">
+                        <label for="r1_postnom">Post-nom <span class="required">*</span></label>
+                        <input id="r1_postnom" name="r1_postnom" type="text" required>
+                    </div>
+
+                    <div class="registration-field">
+                        <label for="r1_prenom">Prénom <span class="required">*</span></label>
+                        <input id="r1_prenom" name="r1_prenom" type="text" required>
+                    </div>
+
+                    <div class="registration-field">
+                        <label for="r1_sexe">Sexe <span class="required">*</span></label>
+                        <select id="r1_sexe" name="r1_sexe" required>
+                            <option value="">Sélectionner</option>
+                            <option value="M">M</option>
+                            <option value="F">F</option>
+                        </select>
+                    </div>
+
+                    <div class="registration-field">
+                        <label for="r1_parente">Degré de parenté <span class="required">*</span></label>
+                        <select id="r1_parente" name="r1_parente" required>
+                            <option value="">Sélectionner</option>
+                            <option>Père</option>
+                            <option>Mère</option>
+                            <option>Tuteur</option>
+                            <option>Tutrice</option>
+                            <option>Frère</option>
+                            <option>Sœur</option>
+                            <option>Oncle</option>
+                            <option>Tante</option>
+                            <option>Autre</option>
+                        </select>
+                    </div>
+
+                    <div class="registration-field">
+                        <label for="r1_telephone">Téléphone <span class="required">*</span></label>
+                        <input id="r1_telephone" name="r1_telephone" type="tel" required>
+                    </div>
+
+                    <div class="registration-field">
+                        <label for="r1_rue">Rue <span class="required">*</span></label>
+                        <input id="r1_rue" name="r1_rue" type="text" required>
+                    </div>
+
+                    <div class="registration-field">
+                        <label for="r1_quartier">Quartier <span class="required">*</span></label>
+                        <input id="r1_quartier" name="r1_quartier" type="text" required>
+                    </div>
+
+                    <div class="registration-field">
+                        <label for="r1_commune">Commune <span class="required">*</span></label>
+                        <select id="r1_commune" name="r1_commune" required>
+                            <option value="">Sélectionner</option>
+                            <option>Bandalungwa</option><option>Barumbu</option>
+                            <option>Bumbu</option><option>Gombe</option>
+                            <option>Kalamu</option><option>Kasa-Vubu</option>
+                            <option>Kimbanseke</option><option>Kinshasa</option>
+                            <option>Kintambo</option><option>Kisenso</option>
+                            <option>Lemba</option><option>Limete</option>
+                            <option>Lingwala</option><option>Makala</option>
+                            <option>Maluku</option><option>Masina</option>
+                            <option>Matete</option><option>Mont-Ngafula</option>
+                            <option>Ngaba</option><option>Ngaliema</option>
+                            <option>Ngiri-Ngiri</option><option>Ndjili</option>
+                            <option>Nsele</option><option>Selembao</option>
+                        </select>
+                    </div>
+
+                    <div class="registration-field">
+                        <label for="r1_district">District <span class="required">*</span></label>
+                        <select id="r1_district" name="r1_district" required>
+                            <option value="">Sélectionner</option>
+                            <option>Tshangu</option>
+                            <option>Mont-Amba</option>
+                            <option>Funa</option>
+                            <option>Lukunga</option>
+                        </select>
+                    </div>
+
+                </div>
+            </fieldset>
+
+            <!-- RESPONSABLE REMPLAÇANT -->
+            <fieldset>
+                <legend>03 — Responsable 2 : remplaçant (facultatif)</legend>
+
+                <p class="registration-note">
+                    Cette partie est facultative. Si vous la remplissez,
+                    indiquez les coordonnées du responsable remplaçant.
+                </p>
+
+                <div class="registration-grid">
+
+                    <div class="registration-field">
+                        <label for="r2_nom">Nom</label>
+                        <input id="r2_nom" name="r2_nom" type="text">
+                    </div>
+
+                    <div class="registration-field">
+                        <label for="r2_postnom">Post-nom</label>
+                        <input id="r2_postnom" name="r2_postnom" type="text">
+                    </div>
+
+                    <div class="registration-field">
+                        <label for="r2_prenom">Prénom</label>
+                        <input id="r2_prenom" name="r2_prenom" type="text">
+                    </div>
+
+                    <div class="registration-field">
+                        <label for="r2_sexe">Sexe</label>
+                        <select id="r2_sexe" name="r2_sexe">
+                            <option value="">Sélectionner</option>
+                            <option value="M">M</option>
+                            <option value="F">F</option>
+                        </select>
+                    </div>
+
+                    <div class="registration-field">
+                        <label for="r2_parente">Degré de parenté</label>
+                        <select id="r2_parente" name="r2_parente">
+                            <option value="">Sélectionner</option>
+                            <option>Père</option>
+                            <option>Mère</option>
+                            <option>Tuteur</option>
+                            <option>Tutrice</option>
+                            <option>Frère</option>
+                            <option>Sœur</option>
+                            <option>Oncle</option>
+                            <option>Tante</option>
+                            <option>Autre</option>
+                        </select>
+                    </div>
+
+                    <div class="registration-field">
+                        <label for="r2_telephone">Téléphone</label>
+                        <input id="r2_telephone" name="r2_telephone" type="tel">
+                    </div>
+
+                    <div class="registration-field">
+                        <label for="r2_rue">Rue</label>
+                        <input id="r2_rue" name="r2_rue" type="text">
+                    </div>
+
+                    <div class="registration-field">
+                        <label for="r2_quartier">Quartier</label>
+                        <input id="r2_quartier" name="r2_quartier" type="text">
+                    </div>
+
+                    <div class="registration-field">
+                        <label for="r2_commune">Commune</label>
+                        <select id="r2_commune" name="r2_commune">
+                            <option value="">Sélectionner</option>
+                            <option>Bandalungwa</option><option>Barumbu</option>
+                            <option>Bumbu</option><option>Gombe</option>
+                            <option>Kalamu</option><option>Kasa-Vubu</option>
+                            <option>Kimbanseke</option><option>Kinshasa</option>
+                            <option>Kintambo</option><option>Kisenso</option>
+                            <option>Lemba</option><option>Limete</option>
+                            <option>Lingwala</option><option>Makala</option>
+                            <option>Maluku</option><option>Masina</option>
+                            <option>Matete</option><option>Mont-Ngafula</option>
+                            <option>Ngaba</option><option>Ngaliema</option>
+                            <option>Ngiri-Ngiri</option><option>Ndjili</option>
+                            <option>Nsele</option><option>Selembao</option>
+                        </select>
+                    </div>
+
+                    <div class="registration-field">
+                        <label for="r2_district">District</label>
+                        <select id="r2_district" name="r2_district">
+                            <option value="">Sélectionner</option>
+                            <option>Tshangu</option>
+                            <option>Mont-Amba</option>
+                            <option>Funa</option>
+                            <option>Lukunga</option>
+                        </select>
+                    </div>
+
+                </div>
+            </fieldset>
+
+            <p class="registration-note">
+                Les renseignements fournis seront utilisés pour le traitement
+                de votre demande d'inscription au club.
+            </p>
+
+            <div class="registration-modal-actions">
+                <button type="button"
+                        class="registration-cancel"
+                        data-close-registration>
+                    ANNULER
+                </button>
+
+                <button type="submit" class="registration-submit">
+                    ENVOYER MON INSCRIPTION →
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>
 </body></html>
