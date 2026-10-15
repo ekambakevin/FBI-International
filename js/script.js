@@ -192,7 +192,16 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    openButton.addEventListener("click", openModal);
+   // Bouton desktop et bouton du menu mobile
+const registrationButtons = document.querySelectorAll(
+    "#openRegistrationModal, [data-open-registration]"
+);
+
+registrationButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+        openModal();
+    });
+});
 
     if (closeButton) {
         closeButton.addEventListener("click", closeModal);
