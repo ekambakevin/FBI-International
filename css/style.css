@@ -1339,7 +1339,6 @@ body.master-modal-open {
     color: rgba(255, 255, 255, 0.7);
 }
 
-```css
 /* ==========================================
    MODALE D'INSCRIPTION — FBI PRO-X
 ========================================== */
@@ -1649,4 +1648,71 @@ body.registration-modal-open {
         animation: none;
     }
 }
-```
+
+/* ==========================================
+   BOUTONS INSCRIPTION — DESKTOP ET MOBILE
+========================================== */
+
+/* Style commun */
+.nav-cta {
+    font-family: inherit;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Le bouton desktop reste visible sur ordinateur */
+.desktop-registration-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Le bouton mobile est caché par défaut */
+.mobile-registration-cta {
+    display: none;
+}
+
+/* Affichage réservé aux écrans mobiles */
+@media (max-width: 768px) {
+
+    /* On conserve le bouton desktop dans son état habituel :
+       il est masqué uniquement sur mobile. */
+    .desktop-registration-cta {
+        display: none !important;
+    }
+
+    /* Bouton d'inscription à l'intérieur du menu mobile */
+    .mobile-registration-cta {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        min-height: 48px;
+        margin-top: 12px;
+        padding: 13px 18px;
+        box-sizing: border-box;
+
+        border: 1px solid #d60000;
+        border-radius: 4px;
+        background: #d60000;
+        color: #fff;
+
+        font-family: inherit;
+        font-size: 13px;
+        font-weight: 900;
+        letter-spacing: 1px;
+        text-align: center;
+
+        cursor: pointer;
+    }
+
+    .mobile-registration-cta:hover,
+    .mobile-registration-cta:focus-visible {
+        background: #a90000;
+        border-color: #a90000;
+        color: #fff;
+        outline: 2px solid rgba(214, 0, 0, .25);
+        outline-offset: 3px;
+    }
+}
