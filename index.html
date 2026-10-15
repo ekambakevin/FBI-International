@@ -17,12 +17,30 @@
 <header class="site-header" id="accueil"><div class="container nav">
 <a href="#accueil" class="brand"><img src="images/logo.jpeg" alt="FBI International Pro-X MMA Gym"></a>
 <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
-<nav class="menu" id="mainMenu"><a href="#accueil" class="active">Accueil</a><a href="#club">Le club</a><a href="#disciplines">Disciplines</a><a href="#programmes">Programmes</a><a href="#maitre">Maître</a><a href="#galerie">Galerie</a><a href="#contact">Contact</a></nav>
-<button type="button"
-        class="nav-cta"
-        id="openRegistrationModal"
+<nav class="menu" id="mainMenu">
+    <a href="#accueil" class="active">Accueil</a>
+    <a href="#club">Le club</a>
+    <a href="#disciplines">Disciplines</a>
+    <a href="#programmes">Programmes</a>
+    <a href="#maitre">Maître</a>
+    <a href="#galerie">Galerie</a>
+    <a href="#contact">Contact</a>
+    <!-- Bouton d'inscription pour le menu mobile -->
+    <button
+        type="button"
+        class="nav-cta mobile-registration-cta"
+        data-open-registration
         aria-haspopup="dialog"
         aria-controls="registrationModal">
+        S'INSCRIRE ↗
+    </button>
+</nav>
+<button
+    type="button"
+    class="nav-cta desktop-registration-cta"
+    id="openRegistrationModal"
+    aria-haspopup="dialog"
+    aria-controls="registrationModal">
     S'inscrire ↗
 </button>
 </div></header>
